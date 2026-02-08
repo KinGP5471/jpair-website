@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jpair - AI 帮你修电脑</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Header -->
+  <header class="fixed top-0 w-full bg-white/95 backdrop-blur shadow-sm z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🤖</span>
+        <span class="text-xl font-bold text-gray-800">Jpair</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#features" class="text-gray-600 hover:text-blue-600">功能介绍</a>
+        <a href="#howto" class="text-gray-600 hover:text-blue-600">使用流程</a>
+        <a href="#pricing" class="text-gray-600 hover:text-blue-600">价格</a>
+      </nav>
+      <a href="#download" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">立即下载</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 px-4 bg-gradient-to-b from-blue-50 to-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">AI 帮你修电脑</h1>
+      <p class="text-xl md:text-2xl text-gray-600 mb-10">描述问题，AI 自动诊断修复，不解决不收费</p>
+      <div id="download" class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a href="#" class="flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl text-lg hover:bg-blue-700 transition">💻 Windows 下载</a>
+        <a href="#" class="flex items-center justify-center gap-2 bg-gray-800 text-white px-8 py-4 rounded-xl text-lg hover:bg-gray-900 transition">🍎 macOS 下载</a>
+      </div>
+      <div class="bg-white rounded-2xl shadow-2xl p-4 max-w-2xl mx-auto">
+        <div class="bg-gray-100 rounded-xl h-64 flex items-center justify-center text-gray-400">产品截图展示区</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">为什么选择 Jpair</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-blue-50 transition">
+          <div class="text-5xl mb-4">💬</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">智能对话</h3>
+          <p class="text-gray-600">用自然语言描述问题，AI 理解并分析</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-blue-50 transition">
+          <div class="text-5xl mb-4">🔍</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">远程诊断</h3>
+          <p class="text-gray-600">AI 自动检测电脑问题，无需专业知识</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-blue-50 transition">
+          <div class="text-5xl mb-4">🛠️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">一键修复</h3>
+          <p class="text-gray-600">发现问题立即修复，省时省心</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-blue-50 transition">
+          <div class="text-5xl mb-4">🛡️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">安全可控</h3>
+          <p class="text-gray-600">高风险操作二次确认，全程可控</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Use -->
+  <section id="howto" class="py-20 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">如何使用</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">💻</div>
+          <div class="text-sm text-blue-600 font-bold mb-2">Step 1</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">下载安装</h3>
+          <p class="text-gray-600 text-sm">下载并安装 Jpair</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">💬</div>
+          <div class="text-sm text-blue-600 font-bold mb-2">Step 2</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">描述问题</h3>
+          <p class="text-gray-600 text-sm">用自然语言描述电脑问题</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">🔍</div>
+          <div class="text-sm text-blue-600 font-bold mb-2">Step 3</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">AI 诊断</h3>
+          <p class="text-gray-600 text-sm">授权后 AI 自动检测修复</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">✅</div>
+          <div class="text-sm text-blue-600 font-bold mb-2">Step 4</div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">问题解决</h3>
+          <p class="text-gray-600 text-sm">确认解决才收费</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">透明定价</h2>
+      <p class="text-center text-gray-600 mb-16">💰 不解决不收费，自动退款</p>
+      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div class="rounded-2xl p-8 bg-gray-50">
+          <h3 class="text-xl font-bold mb-4 text-gray-900">快速诊断</h3>
+          <div class="text-4xl font-bold mb-6">¥5</div>
+          <ul class="space-y-3 text-gray-600">
+            <li>✓ 清除缓存</li>
+            <li>✓ 关闭进程</li>
+            <li>✓ 网络重置</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl p-8 bg-blue-600 text-white ring-4 ring-blue-300 scale-105">
+          <div class="text-sm font-bold mb-2">⭐ 推荐</div>
+          <h3 class="text-xl font-bold mb-4">标准诊断</h3>
+          <div class="text-4xl font-bold mb-6">¥15</div>
+          <ul class="space-y-3">
+            <li>✓ 驱动修复</li>
+            <li>✓ 系统优化</li>
+            <li>✓ 软件冲突</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl p-8 bg-gray-50">
+          <h3 class="text-xl font-bold mb-4 text-gray-900">深度诊断</h3>
+          <div class="text-4xl font-bold mb-6">¥30</div>
+          <ul class="space-y-3 text-gray-600">
+            <li>✓ 病毒清理</li>
+            <li>✓ 全面优化</li>
+            <li>✓ 深度检测</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 px-4 bg-blue-600">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">电脑有问题？让 AI 帮你搞定！</h2>
+      <a href="#download" class="inline-block bg-white text-blue-600 px-10 py-4 rounded-xl text-lg font-bold hover:bg-gray-100 transition">立即免费下载</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-4 bg-gray-900 text-gray-400">
+    <div class="max-w-6xl mx-auto text-center">
+      <p>© 2026 Jpair</p>
+      <div class="mt-4 flex justify-center gap-6">
+        <a href="#" class="hover:text-white">用户协议</a>
+        <a href="#" class="hover:text-white">隐私政策</a>
+        <a href="#" class="hover:text-white">联系我们</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

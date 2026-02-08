@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常见问题 - Jpair AI 电脑维修专家</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --primary: #2563EB;
+  --accent-cyan: #06B6D4;
+  --accent-green: #10B981;
+  --bg-light: #F8FAFC;
+  --bg-white: #FFFFFF;
+  --bg-dark: #0F172A;
+  --text-dark: #0F172A;
+  --text-body: #475569;
+  --text-muted: #94A3B8;
+}
+body {
+  font-family: "Outfit", "Noto Sans SC", -apple-system, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+/* Nav */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 16px 48px;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.logo-icon {
+  width: 42px; height: 42px;
+  background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links a { color: var(--text-body); text-decoration: none; font-weight: 500; }
+.nav-links a:hover { color: var(--primary); }
+.nav-cta {
+  background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Hero */
+.hero {
+  padding: 160px 48px 80px;
+  text-align: center;
+  background: var(--bg-white);
+}
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+.hero p {
+  font-size: 20px;
+  color: var(--text-muted);
+}
+
+/* Search */
+.search-section {
+  padding: 0 48px 60px;
+  background: var(--bg-white);
+}
+.search-box {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+.search-box input {
+  width: 100%;
+  padding: 18px 24px 18px 56px;
+  border: 2px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  font-size: 16px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-box input:focus {
+  border-color: var(--primary);
+}
+.search-box::before {
+  content: "🔍";
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+/* FAQ Categories */
+.faq-section {
+  padding: 60px 48px 100px;
+}
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.faq-category {
+  margin-bottom: 48px;
+}
+.faq-category h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.faq-category h2 .icon {
+  font-size: 28px;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq-item {
+  background: var(--bg-white);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.faq-question {
+  padding: 24px 28px;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+.faq-question:hover {
+  background: var(--bg-light);
+}
+.faq-question::after {
+  content: "+";
+  font-size: 24px;
+  color: var(--primary);
+  font-weight: 400;
+  transition: transform 0.3s;
+}
+.faq-item.open .faq-question::after {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s, padding 0.3s;
+}
+.faq-item.open .faq-answer {
+  max-height: 300px;
+}
+.faq-answer-content {
+  padding: 0 28px 24px;
+  color: var(--text-body);
+  line-height: 1.8;
+}
+
+/* Contact */
+.contact-section {
+  padding: 80px 48px;
+  background: var(--bg-white);
+  text-align: center;
+}
+.contact-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+.contact-section p {
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+.contact-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+  color: white;
+  padding: 16px 40px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Footer */
+footer {
+  background: var(--bg-dark);
+  color: white;
+  padding: 60px 48px 40px;
+}
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-links { display: flex; gap: 32px; }
+.footer-links a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 14px;
+}
+.footer-links a:hover { color: white; }
+.footer-copy {
+  color: rgba(255,255,255,0.4);
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 32px; }
+  .footer-container { flex-direction: column; gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="/" class="logo"><div class="logo-icon">💻</div>Jpair</a>
+    <ul class="nav-links">
+      <li><a href="/features.html">功能介绍</a></li>
+      <li><a href="/tutorial.html">使用教程</a></li>
+      <li><a href="/pricing.html">定价</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+    </ul>
+    <a href="/download.html" class="nav-cta">立即下载</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>常见问题</h1>
+  <p>找到您需要的答案</p>
+</section>
+
+<section class="search-section">
+  <div class="search-box">
+    <input type="text" placeholder="搜索问题..." id="searchInput">
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="faq-container">
+    
+    <div class="faq-category">
+      <h2><span class="icon">💻</span> 产品相关</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">Jpair 能解决哪些问题？</div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Jpair 可以诊断和解决大多数常见电脑问题，包括：蓝屏死机、电脑卡顿、网络连接问题、软件崩溃闪退、开机黑屏、驱动故障、病毒查杀等。复杂的硬件故障会建议您联系专业维修。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">AI 诊断准确吗？</div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              我们的 AI 基于海量维修案例训练，对常见问题的诊断准确率达到 98% 以上。如果遇到复杂问题，AI 无法确定时会说明情况，并建议联系人工客服。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">支持哪些操作系统？</div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              目前支持 Windows 10/11（64位）和 macOS 10.15 及以上版本。Linux 版本正在开发中，敬请期待。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">需要安装软件吗？</div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              是的，需要下载安装我们的客户端。因为远程诊断和修复需要访问您的电脑系统信息，这必须通过本地客户端来完成。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-category">
+      <h2><span class="icon">🔒</span> 安全相关</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">远程控制安全吗？</div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              绝对安全。所有远程操作都需要您明确授权，每个操作前都会告知您将要执行什么。您可以随时暂停或取消操作，完全掌控局面。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">会窃取我的数据吗？</div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              绝对不会。我们只访问诊断所需的系统信息（如系统日志、软件列表等），绝不会触碰您的个人文件、照片、浏览记录等私人数据。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">客户端开源吗？</div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              是的，客户端代码完全开源，发布在 GitHub 上，接受全球开发者审查。您可以查看源代码确认我们的安全承诺。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-category">
+      <h2><span class="icon">💰</span> 费用相关</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">怎么收费？</div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              按实际诊断和修复消耗计费。每次操作前都会明确告知预估费用，您确认后才会开始。常见问题大多在 5-30 元之间。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">修不好收费吗？</div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              修复失败不收费。如果问题没有解决，您可以继续尝试其他方案，或联系人工客服协助处理。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">可以退款吗？</div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              支持退款。账户未使用余额可申请全额退款，1-3 个工作日内处理。在客户端「我的」页面提交退款申请即可。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-category">
+      <h2><span class="icon">🛠️</span> 使用相关</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">怎么联系客服？</div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              您可以在客户端内直接联系客服，或通过微信关注「Jpair」公众号获取帮助。客服工作时间：9:00-22:00。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">支持多台电脑吗？</div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              支持。一个账号可以绑定多台电脑，余额共享。在客户端登录同一个账号即可。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">有时间限制吗？</div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              AI 诊断服务 7×24 小时在线，随时可用。人工客服工作时间为 9:00-22:00。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="contact-section">
+  <h2>没找到答案？</h2>
+  <p>联系我们的客服团队，我们将尽快回复您</p>
+  <a href="/contact.html" class="contact-btn">联系客服</a>
+</section>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-links">
+      <a href="/">首页</a>
+      <a href="/features.html">功能介绍</a>
+      <a href="/pricing.html">定价</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/terms.html">用户协议</a>
+      <a href="/privacy.html">隐私政策</a>
+    </div>
+    <p class="footer-copy">© 2026 Jpair. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => {
+    q.parentElement.classList.toggle('open');
+  });
+});
+
+// Simple search
+document.getElementById('searchInput').addEventListener('input', function(e) {
+  const query = e.target.value.toLowerCase();
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = text.includes(query) ? 'block' : 'none';
+  });
+});
+</script>
+
+</body>
+</html>
