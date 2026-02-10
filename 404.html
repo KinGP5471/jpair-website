@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 - Jpair</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { --primary: #2563EB; --accent-cyan: #06B6D4; --bg-light: #F8FAFC; --text-dark: #0F172A; --text-body: #475569; --text-muted: #94A3B8; }
+body { font-family: "Outfit", "Noto Sans SC", -apple-system, sans-serif; background: var(--bg-light); color: var(--text-body); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 48px; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(0,0,0,0.04); }
+.nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 26px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-icon { width: 42px; height: 42px; background: linear-gradient(135deg, var(--primary) 0%, var(--accent-cyan) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links a { color: var(--text-body); text-decoration: none; font-weight: 500; font-size: 15px; }
+.nav-links a:hover { color: var(--primary); }
+.nav-cta { background: linear-gradient(135deg, var(--primary) 0%, var(--accent-cyan) 100%); color: white; padding: 12px 26px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 14px; box-shadow: 0 4px 14px rgba(37,99,235,0.25); }
+.error-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 140px 48px 100px; }
+.error-icon { font-size: 120px; margin-bottom: 24px; }
+.error-page h1 { font-size: 72px; font-weight: 700; color: var(--text-dark); margin-bottom: 16px; letter-spacing: -2px; }
+.error-page h2 { font-size: 28px; font-weight: 600; color: var(--text-dark); margin-bottom: 16px; }
+.error-page p { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; max-width: 480px; margin-left: auto; margin-right: auto; }
+.back-btn { background: linear-gradient(135deg, var(--primary) 0%, var(--accent-cyan) 100%); color: white; padding: 18px 38px; border-radius: 14px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(37,99,235,0.3); display: inline-block; }
+.back-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(37,99,235,0.4); }
+@media (max-width: 768px) { nav { padding: 14px 24px; } .nav-links { display: none; } .error-page h1 { font-size: 48px; } .error-page h2 { font-size: 22px; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <a href="/" class="logo"><div class="logo-icon">💻</div>Jpair</a>
+    <ul class="nav-links">
+      <li><a href="/features.html">功能介绍</a></li>
+      <li><a href="/pricing.html">定价</a></li>
+      <li><a href="/faq.html">常见问题</a></li>
+    </ul>
+    <a href="/download.html" class="nav-cta">立即下载</a>
+  </div>
+</nav>
+<section class="error-page">
+  <div>
+    <div class="error-icon">🔧</div>
+    <h1>404</h1>
+    <h2>页面未找到</h2>
+    <p>您访问的页面不存在或已被移除，请返回首页继续浏览。</p>
+    <a href="/" class="back-btn">返回首页 →</a>
+  </div>
+</section>
+</body>
+</html>

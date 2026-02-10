@@ -416,6 +416,10 @@ footer {
 
 .nav-cta { background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%); color: white !important; padding: 12px 26px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s ease; box-shadow: 0 4px 14px rgba(37,99,235,0.25); }
 .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,99,235,0.4); }
+
+.download-btn.disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; position: relative; }
+.download-btn.disabled:hover { transform: none; box-shadow: none; }
+.coming-soon { display: inline-block; background: #F59E0B; color: white; font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle; }
 </style>
 </head>
 <body>
@@ -444,7 +448,8 @@ footer {
       <div class="download-icon">🫟</div>
       <h3>Windows</h3>
       <p class="version">v1.0.0 | 65MB</p>
-      <a href="javascript:alert('Windows 版即将上线，敬请期待！')" class="download-btn">下载 Windows 版</a>
+      <a href="javascript:void(0)" class="download-btn disabled" onclick="return false">下载 Windows 版
+        <span class="coming-soon">即将推出</span></a>
       <p class="download-meta">支持 Windows 10 / 11</p>
     </div>
     <div class="download-card">
